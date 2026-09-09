@@ -6,6 +6,10 @@
     <title>T3Trims | Barber Mississauga</title>
     <meta name="description" content="T3Trims - Premium barber services in Mississauga, offering expert fades, trims, beard grooming, and VIP services. Book your appointment today!">
     <meta name="keywords" content="Mississauga barber, best barber Mississauga, fade haircut Mississauga, beard trim Mississauga, mobile barber, VIP grooming services">
+    <meta property="og:title" content="T3Trims | Barber Mississauga">
+    <meta property="og:description" content="Premium barber services in Mississauga, offering expert fades, trims, beard grooming, and VIP services. Book your appointment today!">
+    <meta property="og:image" content="images/banner/banner.jpg">
+    <meta property="og:type" content="website">
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         header { background: url('images/banner/banner.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 60px 20px;}
@@ -25,6 +29,42 @@
         .map-container iframe { width: 100%; height: 450px; border-radius: 5px; border: 0; }
         .map-container iframe, .booking-container iframe { width: 100%; height: 450px; border-radius: 5px; border: 0;}
         footer { background: #222; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
+
+        /* Chat widget */
+        #chatToggleBtn {
+            position: fixed; bottom: 20px; left: 20px; z-index: 1001;
+            background: #4C0A0A; color: #fff; border: none; border-radius: 50%;
+            width: 56px; height: 56px; font-size: 24px; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        #chatPanel {
+            position: fixed; bottom: 90px; left: 20px; z-index: 1001;
+            width: 320px; max-width: calc(100vw - 40px); height: 420px;
+            background: #fff; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            display: none; flex-direction: column; overflow: hidden;
+        }
+        #chatPanel.open { display: flex; }
+        #chatHeader {
+            background: #4C0A0A; color: #fff; padding: 12px 14px; font-weight: bold;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        #chatHeader button {
+            background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;
+        }
+        #chatMessages {
+            flex: 1; overflow-y: auto; padding: 12px; font-size: 14px; background: #f9f9f9;
+        }
+        .chat-msg { margin-bottom: 10px; padding: 8px 12px; border-radius: 10px; max-width: 85%; line-height: 1.4; }
+        .chat-msg.user { background: #4C0A0A; color: #fff; margin-left: auto; }
+        .chat-msg.bot { background: #eee; color: #222; margin-right: auto; }
+        .chat-msg.typing { background: #eee; color: #888; font-style: italic; }
+        #chatInputRow { display: flex; border-top: 1px solid #eee; }
+        #chatInput {
+            flex: 1; border: none; padding: 10px 12px; font-size: 14px; outline: none;
+        }
+        #chatSendBtn {
+            background: #4C0A0A; color: #fff; border: none; padding: 0 16px; cursor: pointer; font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -47,15 +87,15 @@
             <h2>Meet the Team</h2>
             <div class="team">
                 <div class="team-member">
-                    <img src="images/team/t3.jpg" alt="T3 - Neighborhood Barber">
+                    <img loading="lazy" src="images/team/t3.jpg" alt="T3 - Neighborhood Barber">
                     <p>T3 - Neighborhood Barber</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/lucky.jpg" alt="Lucky - Marketing Specialist">
+                    <img loading="lazy" src="images/team/lucky.jpg" alt="Lucky - Marketing Specialist">
                     <p>Lucky - Marketing Specialist</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/bigboy.jpg" alt="Big Boy - Finance Expert">
+                    <img loading="lazy" src="images/team/bigboy.jpg" alt="Big Boy - Finance Expert">
                     <p>Big Boy - Finance Expert</p>
                 </div>
             </div>
@@ -64,15 +104,15 @@
         <section id="gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <img src="images/gallery/cut1.jpg" alt="Mid-Skin Fade">
-                <img src="images/gallery/cut2.jpg" alt="Taper Fade">
-                <img src="images/gallery/cut3.jpg" alt="Mid-Skin Fade">
-                <img src="images/gallery/cut4.jpg" alt="Low-Skin Fade">
-                <img src="images/gallery/cut5.jpg" alt="Taper Fade">
-                <img src="images/gallery/cut6.jpg" alt="Low-Skin Fade">
-                <img src="images/gallery/cut7.jpg" alt="Mid-Skin Fade">
-                <img src="images/gallery/cut8.jpg" alt="Mullet Hairstyle">
-                <img src="images/gallery/cut9.jpg" alt="Low-0.5 Fade">
+                <img loading="lazy" src="images/gallery/cut1.jpg" alt="Mid-Skin Fade">
+                <img loading="lazy" src="images/gallery/cut2.jpg" alt="Taper Fade">
+                <img loading="lazy" src="images/gallery/cut3.jpg" alt="Mid-Skin Fade">
+                <img loading="lazy" src="images/gallery/cut4.jpg" alt="Low-Skin Fade">
+                <img loading="lazy" src="images/gallery/cut5.jpg" alt="Taper Fade">
+                <img loading="lazy" src="images/gallery/cut6.jpg" alt="Low-Skin Fade">
+                <img loading="lazy" src="images/gallery/cut7.jpg" alt="Mid-Skin Fade">
+                <img loading="lazy" src="images/gallery/cut8.jpg" alt="Mullet Hairstyle">
+                <img loading="lazy" src="images/gallery/cut9.jpg" alt="Low-0.5 Fade">
             </div>
         </section>    
 
@@ -140,5 +180,97 @@ Could not recommend him enough if you have an important occasion coming up and w
     <footer>
         <p>&copy; 2025 T3 Trims. All Rights Reserved.</p>
     </footer>
+
+    <button id="chatToggleBtn" aria-label="Chat with us">💬</button>
+    <div id="chatPanel">
+        <div id="chatHeader">
+            <span>T3Trims Assistant</span>
+            <button id="chatCloseBtn" aria-label="Close chat">&times;</button>
+        </div>
+        <div id="chatMessages"></div>
+        <div id="chatInputRow">
+            <input type="text" id="chatInput" placeholder="Ask about services, pricing, booking...">
+            <button id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const CHAT_ENDPOINT = "https://zoxukadlhhoqcbzumehz.supabase.co/functions/v1/chat";
+        const chatToggleBtn = document.getElementById("chatToggleBtn");
+        const chatCloseBtn = document.getElementById("chatCloseBtn");
+        const chatPanel = document.getElementById("chatPanel");
+        const chatMessages = document.getElementById("chatMessages");
+        const chatInput = document.getElementById("chatInput");
+        const chatSendBtn = document.getElementById("chatSendBtn");
+
+        let history = [];
+        let opened = false;
+
+        function addMessage(text, role) {
+            const div = document.createElement("div");
+            div.className = "chat-msg " + role;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div;
+        }
+
+        chatToggleBtn.addEventListener("click", () => {
+            chatPanel.classList.add("open");
+            if (!opened) {
+                opened = true;
+                addMessage("Hey! Ask me about services, pricing, promos, or how to book.", "bot");
+            }
+            chatInput.focus();
+        });
+
+        chatCloseBtn.addEventListener("click", () => {
+            chatPanel.classList.remove("open");
+        });
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, "user");
+            chatInput.value = "";
+            chatSendBtn.disabled = true;
+
+            const typingEl = document.createElement("div");
+            typingEl.className = "chat-msg bot typing";
+            typingEl.textContent = "Typing...";
+            chatMessages.appendChild(typingEl);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const res = await fetch(CHAT_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message, history }),
+                });
+                const data = await res.json();
+                typingEl.remove();
+
+                if (data.error) {
+                    addMessage("Sorry, something went wrong. Please call/text us at +1 (647) 741-5316.", "bot");
+                } else {
+                    addMessage(data.reply, "bot");
+                    history.push({ role: "user", content: message });
+                    history.push({ role: "assistant", content: data.reply });
+                }
+            } catch (err) {
+                typingEl.remove();
+                addMessage("Sorry, I couldn't connect. Please call/text us at +1 (647) 741-5316.", "bot");
+                console.error(err);
+            }
+
+            chatSendBtn.disabled = false;
+        }
+
+        chatSendBtn.addEventListener("click", sendMessage);
+        chatInput.addEventListener("keydown", e => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
 </body>
 </html>
