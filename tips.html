@@ -10,18 +10,40 @@
     <meta property="og:description" content="Basic grooming tips from T3Trims — haircare, beard maintenance, fade upkeep, and shaving advice.">
     <meta property="og:image" content="images/banner/banner.jpg">
     <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234C0A0A'/><text x='32' y='43' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='28' fill='white' text-anchor='middle'>T3</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: url('images/banner/banner.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 60px 20px;}
-        nav { display: flex; justify-content: center; background: #444; padding: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: #fff; text-decoration: none; padding: 10px 20px; }
-        nav a.active { text-decoration: underline; }
-        .book-now-btn { position: fixed; bottom: 20px; right: 20px; background: #ff0000; color: #fff; padding: 15px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
-        .container { max-width: 1100px; margin: auto; padding: 20px; background: #fff; }
+        :root { --maroon: #4C0A0A; --accent: #b3121b; --accent-dark: #8e0e15; --ink: #141414; --text: #2b2b2b; --muted: #6b6b6b; --bg: #f4f1ee; --card: #f6f2ef; }
+        h2 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: 2px; line-height: 1.1; color: var(--ink); margin: 40px 0 20px; }
+        h2::after { content: ""; display: block; width: 56px; height: 3px; background: var(--accent); margin-top: 10px; }
+        h3, h4 { font-weight: 600; }
+        body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.65; }
+        header { background: linear-gradient(rgba(20, 5, 5, 0.55), rgba(76, 10, 10, 0.7)), url('images/banner/banner.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 70px 20px; }
+        header h1 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(2.6rem, 8vw, 5rem); letter-spacing: 3px; line-height: 1; margin: 0; text-shadow: 0 4px 14px rgba(0, 0, 0, 0.6); }
+        header h1::after { content: ""; display: block; width: 80px; height: 4px; background: var(--accent); margin: 16px auto 0; }
+        header p { font-size: clamp(0.9rem, 2.5vw, 1.25rem); letter-spacing: clamp(1px, 0.6vw, 4px); text-transform: uppercase; margin: 16px 0 0; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+        nav { display: flex; justify-content: center; background: var(--ink); padding: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: #fff; text-decoration: none; padding: 10px 20px; font-size: 15px; letter-spacing: 0.5px; transition: box-shadow 0.2s; }
+        nav a:hover { box-shadow: inset 0 -2px var(--accent); }
+        nav a.active { box-shadow: inset 0 -2px var(--accent); }
+        .book-now-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: #fff; padding: 15px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); transition: background 0.2s; }
+        .book-now-btn:hover { background: var(--accent-dark); }
+        .container { max-width: 1100px; margin: 30px auto; padding: 20px 40px 40px; background: #fff; border-radius: 8px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); }
+        .container > section { padding: 16px 0; }
+        @media (max-width: 700px) { .container { margin: 0 auto; padding: 10px 18px 30px; border-radius: 0; } }
         .tip-category { color: #4C0A0A; border-bottom: 2px solid #4C0A0A; padding-bottom: 5px; margin-top: 30px; }
-        .tip-card { background: #eee; padding: 15px 20px; margin: 15px 0; border-radius: 5px; }
+        .tip-card { background: var(--card); padding: 15px 20px; margin: 15px 0; border-radius: 5px; }
         .tip-card h4 { margin-top: 0; }
-        footer { background: #222; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        footer { background: var(--ink); color: #fff; text-align: center; padding: 40px 20px 30px; margin-top: 40px; }
+        .footer-brand { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 2rem; letter-spacing: 3px; line-height: 1; }
+        .footer-tag { color: #aaa; margin: 6px 0 16px; font-size: 0.9rem; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 18px; }
+        .footer-links a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+        .footer-copy { color: #777; font-size: 0.8rem; margin: 0; }
 
         /* Chat widget */
         #chatToggleBtn {
@@ -69,6 +91,7 @@
         <a href="index.html#about">About Us</a>
         <a href="index.html#booking">Book Now</a>
         <a href="index.html#services">Services</a>
+        <a href="index.html#style-finder">Style Finder</a>
         <a href="tips.html" class="active">Grooming Tips</a>
         <a href="index.html#contact">Contact Me</a>
         <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
@@ -138,7 +161,14 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 T3 Trims. All Rights Reserved.</p>
+        <div class="footer-brand">T3TRIMS</div>
+        <p class="footer-tag">Precision Cuts. Premium Service. · Mavis &amp; Derry, Mississauga</p>
+        <div class="footer-links">
+            <a href="tel:+16477415316">+1 (647) 741-5316</a>
+            <a href="https://instagram.com/t3trims" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" target="_blank" rel="noopener">Book Online</a>
+        </div>
+        <p class="footer-copy">&copy; <span class="year">2026</span> T3 Trims. All Rights Reserved.</p>
     </footer>
 
     <button id="chatToggleBtn" aria-label="Chat with us">💬</button>
@@ -155,6 +185,22 @@
     </div>
 
     <script>
+        // Keep the footer year current
+        document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+
+        // Fade sections in as they scroll into view (skipped if the visitor prefers less motion)
+        if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            const revealer = new IntersectionObserver(entries => entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("visible");
+                revealer.unobserve(entry.target);
+            }), { threshold: 0.12 });
+            document.querySelectorAll(".container > section, .container > .contact-grid").forEach(el => {
+                el.classList.add("reveal");
+                revealer.observe(el);
+            });
+        }
+
         const CHAT_ENDPOINT = "https://zoxukadlhhoqcbzumehz.supabase.co/functions/v1/chat";
         const chatToggleBtn = document.getElementById("chatToggleBtn");
         const chatCloseBtn = document.getElementById("chatCloseBtn");
