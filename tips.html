@@ -27,6 +27,17 @@
         nav { display: flex; justify-content: center; background: var(--ink); padding: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
         nav a { color: #fff; text-decoration: none; padding: 10px 20px; font-size: 15px; letter-spacing: 0.5px; transition: box-shadow 0.2s; }
         nav a:hover { box-shadow: inset 0 -2px var(--accent); }
+        .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-brand, .nav-toggle { display: none; }
+        @media (max-width: 700px) {
+            nav { justify-content: space-between; align-items: center; padding: 6px 12px; }
+            .nav-brand { display: block; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 1.6rem; letter-spacing: 2px; padding: 6px 4px; }
+            .nav-brand:hover { box-shadow: none; }
+            .nav-toggle { display: block; background: none; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 6px; color: #fff; font: 600 15px 'Inter', 'Segoe UI', Arial, sans-serif; padding: 8px 14px; cursor: pointer; }
+            .nav-links { display: none; flex-basis: 100%; flex-direction: column; text-align: center; padding: 6px 0 4px; }
+            nav.open .nav-links { display: flex; }
+            .nav-links a { padding: 13px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        }
         nav a.active { box-shadow: inset 0 -2px var(--accent); }
         .book-now-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: #fff; padding: 15px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); transition: background 0.2s; }
         .book-now-btn:hover { background: var(--accent-dark); }
@@ -88,13 +99,17 @@
         <p>Precision Cuts. Premium Service.</p>
     </header>
     <nav>
-        <a href="index.html#about">About Us</a>
-        <a href="index.html#booking">Book Now</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#style-finder">Style Finder</a>
-        <a href="tips.html" class="active">Grooming Tips</a>
-        <a href="index.html#contact">Contact Me</a>
-        <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
+        <a href="index.html" class="nav-brand">T3TRIMS</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#booking">Book Now</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#style-finder">Style Finder</a>
+            <a href="tips.html" class="active">Grooming Tips</a>
+            <a href="index.html#contact">Contact Me</a>
+            <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
+        </div>
     </nav>
     <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" class="book-now-btn" target="_blank">Book Now</a>
 
@@ -185,6 +200,20 @@
     </div>
 
     <script>
+        // Phone menu: the ☰ button shows/hides the nav links; picking a link closes it
+        const siteNav = document.querySelector("nav");
+        const navToggle = document.querySelector(".nav-toggle");
+        navToggle.addEventListener("click", () => {
+            const open = siteNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open);
+            navToggle.textContent = open ? "✕ Close" : "☰ Menu";
+        });
+        document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", () => {
+            siteNav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.textContent = "☰ Menu";
+        }));
+
         // Keep the footer year current
         document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
 

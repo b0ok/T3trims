@@ -14,6 +14,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "BarberShop",
+        "name": "T3Trims",
+        "description": "Premium barber services in Mississauga: fades, trims, beard grooming, and mobile VIP services.",
+        "url": "https://t3trims.netlify.app/",
+        "image": "https://t3trims.netlify.app/images/gallery/cut1.jpg",
+        "telephone": "+1-647-741-5316",
+        "priceRange": "$25-$80+",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mississauga",
+            "addressRegion": "ON",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.6345,
+            "longitude": -79.7238
+        },
+        "hasMap": "https://www.google.com/maps?cid=13440267114156648736",
+        "areaServed": "Mississauga, ON",
+        "sameAs": [
+            "https://instagram.com/t3trims"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Barber Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "priceCurrency": "CAD",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fresh Up",
+                        "description": "Fade, beard, trim"
+                    },
+                    "price": 35
+                },
+                {
+                    "@type": "Offer",
+                    "priceCurrency": "CAD",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "VIP Service",
+                        "description": "Fresh up, massage, face cleanse"
+                    },
+                    "price": 80
+                },
+                {
+                    "@type": "Offer",
+                    "priceCurrency": "CAD",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Barber on the GO!",
+                        "description": "Mobile VIP service, the barber comes to you"
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 80,
+                        "priceCurrency": "CAD"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "priceCurrency": "CAD",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Student Discount",
+                        "description": "Haircut for students (student ID required)"
+                    },
+                    "price": 25
+                }
+            ]
+        }
+    }
+    </script>
     <style>
         :root { --maroon: #4C0A0A; --accent: #b3121b; --accent-dark: #8e0e15; --ink: #141414; --text: #2b2b2b; --muted: #6b6b6b; --bg: #f4f1ee; --card: #f6f2ef; }
         h2 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: 2px; line-height: 1.1; color: var(--ink); margin: 40px 0 20px; }
@@ -27,6 +105,17 @@
         nav { display: flex; justify-content: center; background: var(--ink); padding: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
         nav a { color: #fff; text-decoration: none; padding: 10px 20px; font-size: 15px; letter-spacing: 0.5px; transition: box-shadow 0.2s; }
         nav a:hover { box-shadow: inset 0 -2px var(--accent); }
+        .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-brand, .nav-toggle { display: none; }
+        @media (max-width: 700px) {
+            nav { justify-content: space-between; align-items: center; padding: 6px 12px; }
+            .nav-brand { display: block; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 1.6rem; letter-spacing: 2px; padding: 6px 4px; }
+            .nav-brand:hover { box-shadow: none; }
+            .nav-toggle { display: block; background: none; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 6px; color: #fff; font: 600 15px 'Inter', 'Segoe UI', Arial, sans-serif; padding: 8px 14px; cursor: pointer; }
+            .nav-links { display: none; flex-basis: 100%; flex-direction: column; text-align: center; padding: 6px 0 4px; }
+            nav.open .nav-links { display: flex; }
+            .nav-links a { padding: 13px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        }
         .book-now-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: #fff; padding: 15px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); transition: background 0.2s; }
         .book-now-btn:hover { background: var(--accent-dark); }
         .container { max-width: 1100px; margin: 30px auto; padding: 20px 40px 40px; background: #fff; border-radius: 8px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); }
@@ -92,6 +181,7 @@
         .map-container h2, .booking-container h2 { color: #fff; margin-top: 10px; }
         .map-container h2::after, .booking-container h2::after { margin: 10px auto 0; }
         .map-container iframe, .booking-container iframe { width: 100%; height: 450px; border-radius: 5px; border: 0;}
+        #squareBooking { min-height: 500px; }
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: none; }
         footer { background: var(--ink); color: #fff; text-align: center; padding: 40px 20px 30px; margin-top: 40px; }
@@ -159,13 +249,17 @@
         <p>Precision Cuts. Premium Service.</p>
     </header>
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#booking">Book Now</a>
-        <a href="#services">Services</a>
-        <a href="#style-finder">Style Finder</a>
-        <a href="tips.html">Grooming Tips</a>
-        <a href="#contact">Contact Me</a>
-        <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
+        <a href="#" class="nav-brand">T3TRIMS</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About Us</a>
+            <a href="#booking">Book Now</a>
+            <a href="#services">Services</a>
+            <a href="#style-finder">Style Finder</a>
+            <a href="tips.html">Grooming Tips</a>
+            <a href="#contact">Contact Me</a>
+            <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
+        </div>
     </nav>
     <a href="#booking" class="book-now-btn">Book Now</a>
 
@@ -194,7 +288,7 @@
         <section id="booking" class="booking-container">
             <h2>Book an Appointment</h2>
             <p style="color: #fff;">Use our Square booking system to schedule your appointment below.</p>
-            <!-- Start Square Appointments Embed Code --><script src='https://square.site/appointments/buyer/widget/8zvxgymjgogn2w/LRF1W79CM4Q2P.js'></script><!-- End Square Appointments Embed Code -->
+            <div id="squareBooking"></div>
         </section>
 
         <section id="services">
@@ -361,6 +455,20 @@ Could not recommend him enough if you have an important occasion coming up and w
     </div>
 
     <script>
+        // Phone menu: the ☰ button shows/hides the nav links; picking a link closes it
+        const siteNav = document.querySelector("nav");
+        const navToggle = document.querySelector(".nav-toggle");
+        navToggle.addEventListener("click", () => {
+            const open = siteNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open);
+            navToggle.textContent = open ? "✕ Close" : "☰ Menu";
+        });
+        document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", () => {
+            siteNav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.textContent = "☰ Menu";
+        }));
+
         // Keep the footer year current
         document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
 
@@ -470,6 +578,27 @@ Could not recommend him enough if you have an important occasion coming up and w
             styleResult.hidden = false;
             styleResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }));
+
+        // Square booking calendar: load it only as the visitor nears the booking section,
+        // so it doesn't hold up the rest of the page. Square's script inserts the
+        // calendar right where its <script> tag sits, so we add the tag inside #squareBooking.
+        const SQUARE_WIDGET = "https://square.site/appointments/buyer/widget/8zvxgymjgogn2w/LRF1W79CM4Q2P.js";
+        let squareLoaded = false;
+        function loadSquareBooking() {
+            if (squareLoaded) return;
+            squareLoaded = true;
+            const s = document.createElement("script");
+            s.src = SQUARE_WIDGET;
+            document.getElementById("squareBooking").appendChild(s);
+        }
+        if ("IntersectionObserver" in window) {
+            const bookingWatcher = new IntersectionObserver(entries => {
+                if (entries.some(e => e.isIntersecting)) { loadSquareBooking(); bookingWatcher.disconnect(); }
+            }, { rootMargin: "800px 0px" });
+            bookingWatcher.observe(document.getElementById("booking"));
+        } else {
+            loadSquareBooking();
+        }
 
         // Gallery lightbox
         const galleryItems = [...document.querySelectorAll(".gallery-item")];
