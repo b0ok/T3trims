@@ -13,6 +13,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234C0A0A'/><text x='32' y='43' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='28' fill='white' text-anchor='middle'>T3</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://square.site">
+    <link rel="preconnect" href="https://app.squareup.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
@@ -197,6 +199,8 @@
         .map-container h2::after, .booking-container h2::after { margin: 10px auto 0; }
         .map-container iframe, .booking-container iframe { width: 100%; height: 450px; border-radius: 5px; border: 0;}
         #squareBooking { min-height: 500px; }
+        .booking-loading { color: #ead8d8; margin: 0; padding: 30px 10px 20px; line-height: 1.8; }
+        .booking-loading a { color: #fff; font-weight: 700; }
         .container > .teaser { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: var(--maroon); color: #fff; border-radius: 8px; padding: 24px 28px; margin: 30px 0; }
         .teaser h3 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 2rem; letter-spacing: 1.5px; line-height: 1.1; margin: 0; }
         .teaser p { margin: 4px 0 0; color: #ead8d8; }
@@ -294,7 +298,10 @@
         <section id="booking" class="booking-container">
             <h2>Book an Appointment</h2>
             <p style="color: #fff;">Use our Square booking system to schedule your appointment below.</p>
-            <div id="squareBooking"></div>
+            <div id="squareBooking">
+                <p id="bookingLoading" class="booking-loading">Loading the booking calendar...<br>
+                    Taking a while? <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" target="_blank" rel="noopener">Open the booking page</a></p>
+            </div>
         </section>
 
         <section id="services">
@@ -457,25 +464,39 @@ Could not recommend him enough if you have an important occasion coming up and w
             });
         }
 
-        // Square booking calendar: load it only as the visitor nears the booking section,
-        // so it doesn't hold up the rest of the page. Square's script inserts the
-        // calendar right where its <script> tag sits, so we add the tag inside #squareBooking.
+        // Square booking calendar: start loading it in the background as soon as the page
+        // has finished loading (so it doesn't hold up the page, but is ready by the time
+        // someone scrolls or taps Book Now). Square's script inserts the calendar right
+        // where its <script> tag sits, so we add the tag inside #squareBooking.
         const SQUARE_WIDGET = "https://square.site/appointments/buyer/widget/8zvxgymjgogn2w/LRF1W79CM4Q2P.js";
+        const squareBox = document.getElementById("squareBooking");
         let squareLoaded = false;
         function loadSquareBooking() {
             if (squareLoaded) return;
             squareLoaded = true;
+            // hide the "Loading..." message once Square's calendar frame has loaded
+            new MutationObserver((_, watcher) => {
+                const frame = squareBox.querySelector("iframe");
+                if (!frame) return;
+                watcher.disconnect();
+                frame.addEventListener("load", () => document.getElementById("bookingLoading").hidden = true);
+            }).observe(squareBox, { childList: true, subtree: true });
             const s = document.createElement("script");
             s.src = SQUARE_WIDGET;
-            document.getElementById("squareBooking").appendChild(s);
+            squareBox.appendChild(s);
         }
+        function loadSquareWhenIdle() {
+            if ("requestIdleCallback" in window) requestIdleCallback(loadSquareBooking, { timeout: 2000 });
+            else setTimeout(loadSquareBooking, 500);
+        }
+        if (document.readyState === "complete") loadSquareWhenIdle();
+        else window.addEventListener("load", loadSquareWhenIdle);
+        // ...or right away if the visitor heads to the booking section before that
         if ("IntersectionObserver" in window) {
             const bookingWatcher = new IntersectionObserver(entries => {
                 if (entries.some(e => e.isIntersecting)) { loadSquareBooking(); bookingWatcher.disconnect(); }
             }, { rootMargin: "800px 0px" });
             bookingWatcher.observe(document.getElementById("booking"));
-        } else {
-            loadSquareBooking();
         }
 
         // Gallery lightbox
