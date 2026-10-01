@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
-{
+    {
         "@context": "https://schema.org",
         "@type": "BarberShop",
         "name": "T3Trims",
@@ -89,7 +89,22 @@
                     "price": 25
                 }
             ]
-        }
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "12:00",
+                "closes": "20:00"
+            }
+        ]
     }
     </script>
     <style>
@@ -182,6 +197,11 @@
         .map-container h2::after, .booking-container h2::after { margin: 10px auto 0; }
         .map-container iframe, .booking-container iframe { width: 100%; height: 450px; border-radius: 5px; border: 0;}
         #squareBooking { min-height: 500px; }
+        .container > .teaser { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: var(--maroon); color: #fff; border-radius: 8px; padding: 24px 28px; margin: 30px 0; }
+        .teaser h3 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 2rem; letter-spacing: 1.5px; line-height: 1.1; margin: 0; }
+        .teaser p { margin: 4px 0 0; color: #ead8d8; }
+        .teaser-btn { background: #fff; color: var(--maroon); padding: 12px 20px; border-radius: 6px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+        .teaser-btn:hover { background: #f1e4e4; }
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: none; }
         footer { background: var(--ink); color: #fff; text-align: center; padding: 40px 20px 30px; margin-top: 40px; }
@@ -191,20 +211,6 @@
         .footer-links a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
         .footer-copy { color: #777; font-size: 0.8rem; margin: 0; }
 
-        /* Style finder */
-        .face-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0; }
-        .face-btn { background: var(--card); border: 2px solid transparent; border-radius: 5px; padding: 12px 8px; cursor: pointer; font-size: 15px; font-weight: bold; color: #222; }
-        .face-btn svg { display: block; margin: 0 auto 6px; width: 48px; height: 64px; fill: none; stroke: #4C0A0A; stroke-width: 3; }
-        .face-btn:hover { border-color: #4C0A0A; }
-        .face-btn[aria-pressed="true"] { background: #4C0A0A; color: #fff; }
-        .face-btn[aria-pressed="true"] svg { stroke: #fff; }
-        .face-help { background: var(--card); padding: 10px 15px; border-radius: 5px; }
-        .face-help summary { cursor: pointer; font-weight: bold; }
-        .style-result { background: var(--card); padding: 15px 20px; border-radius: 5px; border-left: 5px solid #4C0A0A; margin-top: 10px; }
-        .style-result h3 { margin-top: 0; color: #4C0A0A; }
-        .style-result ul { padding-left: 20px; }
-        .style-result li { margin-bottom: 6px; }
-        .style-result .book-link { display: inline-block; background: #4C0A0A; color: #fff; padding: 10px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; }
 
         /* Chat widget */
         #chatToggleBtn {
@@ -255,7 +261,7 @@
             <a href="#about">About Us</a>
             <a href="#booking">Book Now</a>
             <a href="#services">Services</a>
-            <a href="#style-finder">Style Finder</a>
+            <a href="style.html">Style Guide</a>
             <a href="tips.html">Grooming Tips</a>
             <a href="#contact">Contact Me</a>
             <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
@@ -319,46 +325,12 @@
             </div>
         </section>
 
-        <section id="style-finder">
-            <h2>Not Sure What Cut to Get?</h2>
-            <p>Pick your face shape and we'll show you the styles that suit you best.</p>
-
-            <details class="face-help">
-                <summary>How do I find my face shape?</summary>
-                <p>Pull your hair back and look straight into a mirror. Compare the width of your forehead, cheekbones, and jaw, and the length of your face:</p>
-                <ul>
-                    <li><strong>Oval:</strong> face is a bit longer than wide, jaw slightly narrower than forehead</li>
-                    <li><strong>Round:</strong> width and length about the same, soft jaw with no sharp angles</li>
-                    <li><strong>Square:</strong> forehead, cheeks, and jaw about the same width, strong angular jaw</li>
-                    <li><strong>Oblong:</strong> face is noticeably longer than wide, with straight sides</li>
-                    <li><strong>Heart:</strong> wide forehead that narrows down to a pointed chin</li>
-                    <li><strong>Diamond:</strong> cheekbones are the widest part, narrow forehead and chin</li>
-                </ul>
-            </details>
-
-            <div class="face-grid">
-                <button class="face-btn" data-shape="oval" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><ellipse cx="30" cy="40" rx="20" ry="30"/></svg>Oval
-                </button>
-                <button class="face-btn" data-shape="round" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><circle cx="30" cy="40" r="25"/></svg>Round
-                </button>
-                <button class="face-btn" data-shape="square" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><rect x="7" y="13" width="46" height="54" rx="6"/></svg>Square
-                </button>
-                <button class="face-btn" data-shape="oblong" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><rect x="13" y="4" width="34" height="72" rx="16"/></svg>Oblong
-                </button>
-                <button class="face-btn" data-shape="heart" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><path d="M7 24 Q7 8 30 8 Q53 8 53 24 Q53 50 30 74 Q7 50 7 24 Z"/></svg>Heart
-                </button>
-                <button class="face-btn" data-shape="diamond" aria-pressed="false">
-                    <svg viewBox="0 0 60 80"><path d="M30 5 Q42 20 54 38 Q42 58 30 75 Q18 58 6 38 Q18 20 30 5 Z"/></svg>Diamond
-                </button>
+        <section id="style-guide" class="teaser">
+            <div>
+                <h3>Not Sure What Cut to Get?</h3>
+                <p>Find the best cuts for your face shape and learn the difference between fades and tapers.</p>
             </div>
-
-            <div id="styleResult" class="style-result" aria-live="polite" hidden></div>
-
+            <a href="style.html" class="teaser-btn">Open the Style Guide &rarr;</a>
         </section>
 
         <section id="reviews" class="reviews">
@@ -410,7 +382,7 @@ Could not recommend him enough if you have an important occasion coming up and w
                 <ul class="contact-list">
                     <li><span class="icon">📍</span><div><strong>Location</strong>Mavis &amp; Derry, Mississauga<br>Right off the 401 or 407</div></li>
                     <li><span class="icon">📞</span><div><strong>Call / Text</strong><a href="tel:+16477415316">+1 (647) 741-5316</a></div></li>
-                    <li><span class="icon">⏰</span><div><strong>Hours</strong>I work around the clock, call/text me, I'm out here</div></li>
+                    <li><span class="icon">⏰</span><div><strong>Hours</strong>Mon–Sat: 12pm – 8pm<br>Need another time? I work around the clock, call/text me, I'm out here</div></li>
                     <li><span class="icon">📸</span><div><strong>Instagram</strong><a href="https://instagram.com/t3trims" target="_blank" rel="noopener">@t3trims</a></div></li>
                 </ul>
                 <a href="#booking" class="contact-book">Book Now</a>
@@ -422,7 +394,7 @@ Could not recommend him enough if you have an important occasion coming up and w
     </div>
     <footer>
         <div class="footer-brand">T3TRIMS</div>
-        <p class="footer-tag">Precision Cuts. Premium Service. · Mavis &amp; Derry, Mississauga</p>
+        <p class="footer-tag">Precision Cuts. Premium Service. · Mavis &amp; Derry, Mississauga · Mon–Sat 12–8pm</p>
         <div class="footer-links">
             <a href="tel:+16477415316">+1 (647) 741-5316</a>
             <a href="https://instagram.com/t3trims" target="_blank" rel="noopener">Instagram</a>
@@ -484,100 +456,6 @@ Could not recommend him enough if you have an important occasion coming up and w
                 revealer.observe(el);
             });
         }
-
-        const FACE_STYLES = {
-            oval: {
-                name: "Oval",
-                why: "The most balanced shape, so almost any cut works. Pick based on your vibe.",
-                cuts: [
-                    ["Mid-Skin Fade + Textured Crop", "clean, modern, low maintenance"],
-                    ["Taper Fade + Side Part", "classic and sharp for work or events"],
-                    ["Pompadour", "volume on top, works great with your proportions"],
-                    ["Buzz Cut", "your face shape can pull off going short"]
-                ],
-                avoid: "Heavy fringes that cover your forehead and hide your balanced proportions.",
-                beard: "Anything goes: stubble, short boxed, or full beard."
-            },
-            round: {
-                name: "Round",
-                why: "The goal is adding height and angles to make the face look longer and sharper.",
-                cuts: [
-                    ["High Skin Fade + Volume on Top", "tight sides slim the face, height elongates it"],
-                    ["Quiff / Pompadour", "lifts the eye upward"],
-                    ["Faux Hawk", "adds height and edge"],
-                    ["Side Part with Hard Part", "a sharp line adds structure"]
-                ],
-                avoid: "Bowl cuts, blunt fringes, and fuller sides, which make the face look wider.",
-                beard: "A beard longer at the chin and tight on the cheeks adds length and jawline."
-            },
-            square: {
-                name: "Square",
-                why: "You've got a strong jaw, so show it off and keep the top a little textured to soften it.",
-                cuts: [
-                    ["Low / Mid Taper Fade", "keeps your jawline the star"],
-                    ["Crew Cut", "masculine and clean"],
-                    ["Textured Crop", "texture on top softens the angles"],
-                    ["Buzz Cut + Lineup", "short and crisp suits a strong frame"]
-                ],
-                avoid: "Very boxy, flat-top shapes that make the head look like a block.",
-                beard: "Light stubble or a short boxed beard to keep that jaw visible."
-            },
-            oblong: {
-                name: "Oblong / Long",
-                why: "Your face is already long, so keep some width on the sides and don't stack height on top.",
-                cuts: [
-                    ["Low Taper Fade", "keeps some fullness on the sides"],
-                    ["Textured Fringe / French Crop", "a forward fringe shortens the face"],
-                    ["Medium-Length Side Part", "balanced width without extra height"],
-                    ["Mullet", "length in the back with fuller sides balances the face"]
-                ],
-                avoid: "Tall pompadours, big quiffs, and high skin fades, which make the face look longer.",
-                beard: "A fuller beard on the sides (not the chin) adds width."
-            },
-            heart: {
-                name: "Heart",
-                why: "Wide forehead, narrow chin. Balance the top and add weight toward the bottom.",
-                cuts: [
-                    ["Textured Fringe", "covers some of the forehead width"],
-                    ["Low Taper Fade", "keeps a little bulk on the sides"],
-                    ["Side-Swept Medium Length", "softens a wide forehead"],
-                    ["Messy Crop", "loose texture keeps the top from looking heavy"]
-                ],
-                avoid: "Slicked-back styles and big volume on top, which make the forehead look wider.",
-                beard: "A full beard or chin strap fills out a narrow chin."
-            },
-            diamond: {
-                name: "Diamond",
-                why: "Cheekbones are your widest point. Add fullness at the forehead and chin.",
-                cuts: [
-                    ["Textured Fringe", "adds width at the forehead"],
-                    ["Low / Mid Taper Fade", "avoid going too tight at the temples"],
-                    ["Swept-Back Medium Length", "softens the cheekbone area"],
-                    ["Mullet", "length in the back balances wide cheekbones"]
-                ],
-                avoid: "High skin fades and tight sides, which make the cheekbones stick out more.",
-                beard: "A full beard or goatee adds width to a narrow chin."
-            }
-        };
-
-        const styleResult = document.getElementById("styleResult");
-        const faceBtns = document.querySelectorAll(".face-btn");
-
-        faceBtns.forEach(btn => btn.addEventListener("click", () => {
-            faceBtns.forEach(b => b.setAttribute("aria-pressed", b === btn));
-            const s = FACE_STYLES[btn.dataset.shape];
-            styleResult.innerHTML = `
-                <h3>${s.name} Face</h3>
-                <p>${s.why}</p>
-                <h4>Recommended cuts</h4>
-                <ul>${s.cuts.map(([cut, note]) => `<li><strong>${cut}</strong>: ${note}</li>`).join("")}</ul>
-                <p><strong>Avoid:</strong> ${s.avoid}</p>
-                <p><strong>Beard tip:</strong> ${s.beard}</p>
-                <p>Still not sure? T3 will help you choose in the chair.</p>
-                <a href="#booking" class="book-link">Book This Look</a>`;
-            styleResult.hidden = false;
-            styleResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }));
 
         // Square booking calendar: load it only as the visitor nears the booking section,
         // so it doesn't hold up the rest of the page. Square's script inserts the

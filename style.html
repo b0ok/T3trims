@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide: Best Haircut for Your Face Shape | T3Trims Barber Mississauga</title>
+    <meta name="description" content="Not sure what haircut to get? Pick your face shape to find the cuts that suit you, and learn the difference between fades and tapers. From T3Trims, a Mississauga barber.">
+    <meta name="keywords" content="haircut for face shape, round face haircut, fade vs taper, low mid high fade, Mississauga barber">
+    <meta property="og:title" content="Not Sure What Cut to Get? | T3Trims Style Guide">
+    <meta property="og:description" content="Find the best haircut for your face shape and learn fade vs. taper.">
+    <meta property="og:image" content="images/banner/banner.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234C0A0A'/><text x='32' y='43' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='28' fill='white' text-anchor='middle'>T3</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --maroon: #4C0A0A; --accent: #b3121b; --accent-dark: #8e0e15; --ink: #141414; --text: #2b2b2b; --muted: #6b6b6b; --bg: #f4f1ee; --card: #f6f2ef; }
+        h2 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: 2px; line-height: 1.1; color: var(--ink); margin: 40px 0 20px; }
+        h2::after { content: ""; display: block; width: 56px; height: 3px; background: var(--accent); margin-top: 10px; }
+        h3, h4 { font-weight: 600; }
+        body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.65; }
+        header { background: linear-gradient(rgba(20, 5, 5, 0.55), rgba(76, 10, 10, 0.7)), url('images/banner/banner.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 70px 20px; }
+        header h1 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: clamp(2.6rem, 8vw, 5rem); letter-spacing: 3px; line-height: 1; margin: 0; text-shadow: 0 4px 14px rgba(0, 0, 0, 0.6); }
+        header h1::after { content: ""; display: block; width: 80px; height: 4px; background: var(--accent); margin: 16px auto 0; }
+        header p { font-size: clamp(0.9rem, 2.5vw, 1.25rem); letter-spacing: clamp(1px, 0.6vw, 4px); text-transform: uppercase; margin: 16px 0 0; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+        nav { display: flex; justify-content: center; background: var(--ink); padding: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: #fff; text-decoration: none; padding: 10px 20px; font-size: 15px; letter-spacing: 0.5px; transition: box-shadow 0.2s; }
+        nav a:hover { box-shadow: inset 0 -2px var(--accent); }
+        .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-brand, .nav-toggle { display: none; }
+        @media (max-width: 700px) {
+            nav { justify-content: space-between; align-items: center; padding: 6px 12px; }
+            .nav-brand { display: block; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 1.6rem; letter-spacing: 2px; padding: 6px 4px; }
+            .nav-brand:hover { box-shadow: none; }
+            .nav-toggle { display: block; background: none; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 6px; color: #fff; font: 600 15px 'Inter', 'Segoe UI', Arial, sans-serif; padding: 8px 14px; cursor: pointer; }
+            .nav-links { display: none; flex-basis: 100%; flex-direction: column; text-align: center; padding: 6px 0 4px; }
+            nav.open .nav-links { display: flex; }
+            .nav-links a { padding: 13px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        }
+        nav a.active { box-shadow: inset 0 -2px var(--accent); }
+        .book-now-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: #fff; padding: 15px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); transition: background 0.2s; }
+        .book-now-btn:hover { background: var(--accent-dark); }
+        .container { max-width: 1100px; margin: 30px auto; padding: 20px 40px 40px; background: #fff; border-radius: 8px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); }
+        .container > section { padding: 16px 0; }
+        @media (max-width: 700px) { .container { margin: 0 auto; padding: 10px 18px 30px; border-radius: 0; } }
+        /* Style finder */
+        .face-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0; }
+        .face-btn { background: var(--card); border: 2px solid transparent; border-radius: 5px; padding: 12px 8px; cursor: pointer; font-size: 15px; font-weight: bold; color: #222; }
+        .face-btn svg { display: block; margin: 0 auto 6px; width: 48px; height: 64px; fill: none; stroke: #4C0A0A; stroke-width: 3; }
+        .face-btn:hover { border-color: #4C0A0A; }
+        .face-btn[aria-pressed="true"] { background: #4C0A0A; color: #fff; }
+        .face-btn[aria-pressed="true"] svg { stroke: #fff; }
+        .face-help { background: var(--card); padding: 10px 15px; border-radius: 5px; }
+        .face-help summary { cursor: pointer; font-weight: bold; }
+        .style-result { background: var(--card); padding: 15px 20px; border-radius: 5px; border-left: 5px solid #4C0A0A; margin-top: 10px; }
+        .style-result h3 { margin-top: 0; color: #4C0A0A; }
+        .style-result ul { padding-left: 20px; }
+        .style-result li { margin-bottom: 6px; }
+        .style-result .book-link { display: inline-block; background: #4C0A0A; color: #fff; padding: 10px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .cut-shape { display: flex; gap: 16px; align-items: center; background: #fff; border-radius: 6px; padding: 12px 16px; margin: 12px 0 16px; }
+        .cut-shape svg { flex: none; width: 100px; height: 144px; }
+        .cut-shape .hair { fill: var(--maroon); }
+        .cut-shape .face > * { fill: #f3e6dc; stroke: var(--ink); stroke-width: 1.5; }
+        .cut-shape h4 { margin: 0 0 4px; color: var(--maroon); }
+        .cut-shape p { margin: 0; }
+        .fade-guide { margin-top: 30px; }
+        .fade-guide h3 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 1.8rem; letter-spacing: 1.5px; color: var(--maroon); margin: 26px 0 8px; }
+        .fade-intro { color: var(--muted); margin: 0 0 12px; }
+        .fade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 12px; }
+        .fade-card { background: var(--card); border-radius: 6px; padding: 16px 18px; text-align: center; }
+        .fade-card svg { width: 130px; height: 143px; }
+        .fade-card h4 { margin: 8px 0 4px; color: var(--ink); }
+        .fade-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+        .style-cta { text-align: center; margin: 30px 0 10px; }
+        .style-cta a { display: inline-block; background: var(--accent); color: #fff; padding: 14px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+        .style-cta a:hover { background: var(--accent-dark); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        footer { background: var(--ink); color: #fff; text-align: center; padding: 40px 20px 30px; margin-top: 40px; }
+        .footer-brand { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 2rem; letter-spacing: 3px; line-height: 1; }
+        .footer-tag { color: #aaa; margin: 6px 0 16px; font-size: 0.9rem; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 18px; }
+        .footer-links a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+        .footer-copy { color: #777; font-size: 0.8rem; margin: 0; }
+
+        /* Chat widget */
+        #chatToggleBtn {
+            position: fixed; bottom: 20px; left: 20px; z-index: 1001;
+            background: #4C0A0A; color: #fff; border: none; border-radius: 50%;
+            width: 56px; height: 56px; font-size: 24px; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        #chatPanel {
+            position: fixed; bottom: 90px; left: 20px; z-index: 1001;
+            width: 320px; max-width: calc(100vw - 40px); height: 420px;
+            background: #fff; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            display: none; flex-direction: column; overflow: hidden;
+        }
+        #chatPanel.open { display: flex; }
+        #chatHeader {
+            background: #4C0A0A; color: #fff; padding: 12px 14px; font-weight: bold;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        #chatHeader button {
+            background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;
+        }
+        #chatMessages {
+            flex: 1; overflow-y: auto; padding: 12px; font-size: 14px; background: #f9f9f9;
+        }
+        .chat-msg { margin-bottom: 10px; padding: 8px 12px; border-radius: 10px; max-width: 85%; line-height: 1.4; }
+        .chat-msg.user { background: #4C0A0A; color: #fff; margin-left: auto; }
+        .chat-msg.bot { background: #eee; color: #222; margin-right: auto; }
+        .chat-msg.typing { background: #eee; color: #888; font-style: italic; }
+        #chatInputRow { display: flex; border-top: 1px solid #eee; }
+        #chatInput {
+            flex: 1; border: none; padding: 10px 12px; font-size: 14px; outline: none;
+        }
+        #chatSendBtn {
+            background: #4C0A0A; color: #fff; border: none; padding: 0 16px; cursor: pointer; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>T3Trims | Barber Mississauga</h1>
+        <p>Precision Cuts. Premium Service.</p>
+    </header>
+    <nav>
+        <a href="index.html" class="nav-brand">T3TRIMS</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#booking">Book Now</a>
+            <a href="index.html#services">Services</a>
+            <a href="style.html" class="active">Style Guide</a>
+            <a href="tips.html">Grooming Tips</a>
+            <a href="index.html#contact">Contact Me</a>
+            <a href="https://instagram.com/t3trims" target="_blank">Instagram</a>
+        </div>
+    </nav>
+    <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" class="book-now-btn" target="_blank">Book Now</a>
+
+    <div class="container">
+        <section id="style-finder">
+            <h2>Not Sure What Cut to Get?</h2>
+            <p>Pick your face shape and we'll show you the styles that suit you best.</p>
+
+            <details class="face-help">
+                <summary>How do I find my face shape?</summary>
+                <p>Pull your hair back and look straight into a mirror. Compare the width of your forehead, cheekbones, and jaw, and the length of your face:</p>
+                <ul>
+                    <li><strong>Oval:</strong> face is a bit longer than wide, jaw slightly narrower than forehead</li>
+                    <li><strong>Round:</strong> width and length about the same, soft jaw with no sharp angles</li>
+                    <li><strong>Square:</strong> forehead, cheeks, and jaw about the same width, strong angular jaw</li>
+                    <li><strong>Oblong:</strong> face is noticeably longer than wide, with straight sides</li>
+                    <li><strong>Heart:</strong> wide forehead that narrows down to a pointed chin</li>
+                    <li><strong>Diamond:</strong> cheekbones are the widest part, narrow forehead and chin</li>
+                    <li><strong>Triangle:</strong> jaw is the widest part, narrowing up to a smaller forehead</li>
+                </ul>
+            </details>
+
+            <div class="face-grid">
+                <button class="face-btn" data-shape="oval" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><ellipse cx="30" cy="40" rx="20" ry="30"/></svg>Oval
+                </button>
+                <button class="face-btn" data-shape="round" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><circle cx="30" cy="40" r="25"/></svg>Round
+                </button>
+                <button class="face-btn" data-shape="square" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><rect x="7" y="13" width="46" height="54" rx="6"/></svg>Square
+                </button>
+                <button class="face-btn" data-shape="oblong" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><rect x="13" y="4" width="34" height="72" rx="16"/></svg>Oblong
+                </button>
+                <button class="face-btn" data-shape="heart" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><path d="M7 24 Q7 8 30 8 Q53 8 53 24 Q53 50 30 74 Q7 50 7 24 Z"/></svg>Heart
+                </button>
+                <button class="face-btn" data-shape="diamond" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><path d="M30 5 Q42 20 54 38 Q42 58 30 75 Q18 58 6 38 Q18 20 30 5 Z"/></svg>Diamond
+                </button>
+                <button class="face-btn" data-shape="triangle" aria-pressed="false">
+                    <svg viewBox="0 0 60 80"><path d="M22 7 Q30 3 38 7 Q46 14 48 32 Q55 54 46 69 Q30 78 14 69 Q5 54 12 32 Q14 14 22 7 Z"/></svg>Triangle
+                </button>
+            </div>
+
+            <div id="styleResult" class="style-result" aria-live="polite" hidden></div>
+
+            <div class="fade-guide">
+                <h3>Fade vs. Taper</h3>
+                <div class="fade-grid">
+                    <div class="fade-card">
+                        <svg viewBox="0 0 100 110" aria-hidden="true"><defs><clipPath id="c-all"><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z"/></clipPath><linearGradient id="g-all" x1="0" y1="46" x2="0" y2="70" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d1512"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient><clipPath id="h-all"><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z"/></clipPath></defs><g clip-path="url(#c-all)"><rect width="100" height="110" fill="#e9cdb4"/><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z" fill="url(#g-all)"/><line x1="10" y1="46" x2="94" y2="46" clip-path="url(#h-all)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3 3"/></g><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z" fill="none" stroke="#141414" stroke-width="1.5"/><ellipse cx="52" cy="57" rx="5" ry="8.5" fill="#dfb99c" stroke="#b98f72" stroke-width="1"/></svg>
+                        <h4>All-Around Fade</h4>
+                        <p>The hair blends down to skin (or close to it) all the way around the sides and back. Clean, sharp, high-contrast.</p>
+                    </div>
+                    <div class="fade-card">
+                        <svg viewBox="0 0 100 110" aria-hidden="true"><defs><clipPath id="c-taper"><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z"/></clipPath><linearGradient id="g-taper" x1="0" y1="76" x2="0" y2="89" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d1512"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient><linearGradient id="s-taper" x1="0" y1="54" x2="0" y2="67" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e9cdb4" stop-opacity="0"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient></defs><g clip-path="url(#c-taper)"><rect width="100" height="110" fill="#e9cdb4"/><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z" fill="url(#g-taper)"/><rect x="55" y="54" width="8" height="14" fill="url(#s-taper)"/></g><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z" fill="none" stroke="#141414" stroke-width="1.5"/><ellipse cx="52" cy="57" rx="5" ry="8.5" fill="#dfb99c" stroke="#b98f72" stroke-width="1"/></svg>
+                        <h4>Taper Fade</h4>
+                        <p>Only the edges fade: the sideburns and the neckline. The rest of the sides keep some length. Subtler, more professional, and grows out cleaner.</p>
+                    </div>
+                </div>
+
+                <h3>Low, Mid or High Fade?</h3>
+                <p class="fade-intro">It's all about where the fade starts. The dashed line shows the starting point.</p>
+                <div class="fade-grid">
+                    <div class="fade-card">
+                        <svg viewBox="0 0 100 110" aria-hidden="true"><defs><clipPath id="c-low"><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z"/></clipPath><linearGradient id="g-low" x1="0" y1="64" x2="0" y2="86" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d1512"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient><clipPath id="h-low"><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z"/></clipPath></defs><g clip-path="url(#c-low)"><rect width="100" height="110" fill="#e9cdb4"/><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z" fill="url(#g-low)"/><line x1="10" y1="64" x2="94" y2="64" clip-path="url(#h-low)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3 3"/></g><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z" fill="none" stroke="#141414" stroke-width="1.5"/><ellipse cx="52" cy="57" rx="5" ry="8.5" fill="#dfb99c" stroke="#b98f72" stroke-width="1"/></svg>
+                        <h4>Low Fade</h4>
+                        <p>Starts just above the ears and follows the hairline. Subtle and work-friendly, keeps more length on the sides.</p>
+                    </div>
+                    <div class="fade-card">
+                        <svg viewBox="0 0 100 110" aria-hidden="true"><defs><clipPath id="c-mid"><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z"/></clipPath><linearGradient id="g-mid" x1="0" y1="48" x2="0" y2="72" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d1512"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient><clipPath id="h-mid"><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z"/></clipPath></defs><g clip-path="url(#c-mid)"><rect width="100" height="110" fill="#e9cdb4"/><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z" fill="url(#g-mid)"/><line x1="10" y1="48" x2="94" y2="48" clip-path="url(#h-mid)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3 3"/></g><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z" fill="none" stroke="#141414" stroke-width="1.5"/><ellipse cx="52" cy="57" rx="5" ry="8.5" fill="#dfb99c" stroke="#b98f72" stroke-width="1"/></svg>
+                        <h4>Mid Fade</h4>
+                        <p>Starts around the middle of the sides, at the temples. The most popular balance between clean and bold.</p>
+                    </div>
+                    <div class="fade-card">
+                        <svg viewBox="0 0 100 110" aria-hidden="true"><defs><clipPath id="c-high"><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z"/></clipPath><linearGradient id="g-high" x1="0" y1="33" x2="0" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d1512"/><stop offset="1" stop-color="#e9cdb4"/></linearGradient><clipPath id="h-high"><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z"/></clipPath></defs><g clip-path="url(#c-high)"><rect width="100" height="110" fill="#e9cdb4"/><path d="M100 0 L100 27 L79 29 L67 36 L61 50 L61 65 L57 67 L46 65 L41 79 L37 89 L0 89 L0 0 Z" fill="url(#g-high)"/><line x1="10" y1="33" x2="94" y2="33" clip-path="url(#h-high)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3 3"/></g><path d="M32 106 L31 90 Q16 78 16 55 Q16 22 48 14 Q74 10 80 32 L82 44 Q90 54 85 58 L84 62 Q87 66 83 70 Q84 78 76 82 L64 86 L62 106 Z" fill="none" stroke="#141414" stroke-width="1.5"/><ellipse cx="52" cy="57" rx="5" ry="8.5" fill="#dfb99c" stroke="#b98f72" stroke-width="1"/></svg>
+                        <h4>High Fade</h4>
+                        <p>Starts up near the top of the head. Bold and high-contrast, shows the most skin.</p>
+                    </div>
+                </div>
+                <p class="fade-intro">Add <strong>"skin"</strong> (like a mid-skin fade) when the bottom goes all the way down to bare skin. Not sure which one? Tapers and low fades are the safest pick for work or school, and T3 can help you decide in the chair.</p>
+            </div>
+
+            <div class="style-cta">
+                <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" target="_blank" rel="noopener">Found your look? Book Now</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-brand">T3TRIMS</div>
+        <p class="footer-tag">Precision Cuts. Premium Service. · Mavis &amp; Derry, Mississauga · Mon–Sat 12–8pm</p>
+        <div class="footer-links">
+            <a href="tel:+16477415316">+1 (647) 741-5316</a>
+            <a href="https://instagram.com/t3trims" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" target="_blank" rel="noopener">Book Online</a>
+        </div>
+        <p class="footer-copy">&copy; <span class="year">2026</span> T3 Trims. All Rights Reserved.</p>
+    </footer>
+
+    <button id="chatToggleBtn" aria-label="Chat with us">💬</button>
+    <div id="chatPanel">
+        <div id="chatHeader">
+            <span>T3Trims Assistant</span>
+            <button id="chatCloseBtn" aria-label="Close chat">&times;</button>
+        </div>
+        <div id="chatMessages"></div>
+        <div id="chatInputRow">
+            <input type="text" id="chatInput" placeholder="Ask about services, pricing, booking...">
+            <button id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Phone menu: the ☰ button shows/hides the nav links; picking a link closes it
+        const siteNav = document.querySelector("nav");
+        const navToggle = document.querySelector(".nav-toggle");
+        navToggle.addEventListener("click", () => {
+            const open = siteNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open);
+            navToggle.textContent = open ? "✕ Close" : "☰ Menu";
+        });
+        document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", () => {
+            siteNav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.textContent = "☰ Menu";
+        }));
+
+        // Keep the footer year current
+        document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+
+        // Fade sections in as they scroll into view (skipped if the visitor prefers less motion)
+        if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            const revealer = new IntersectionObserver(entries => entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("visible");
+                revealer.unobserve(entry.target);
+            }), { threshold: 0.12 });
+            document.querySelectorAll(".container > section, .container > .contact-grid").forEach(el => {
+                el.classList.add("reveal");
+                revealer.observe(el);
+            });
+        }
+
+        const FACE_STYLES = {
+            oval: {
+                name: "Oval",
+                why: "The most balanced shape, so almost any cut works. Pick based on your vibe.",
+                shape: { name: "Balanced", tip: "Your proportions are already balanced, so keep the shape natural: a little height, clean sides. Short or long both work.", hair: "M12 40 Q6 2 30 0 Q54 2 48 40 Z" },
+                cuts: [
+                    ["Mid-Skin Fade + Textured Crop", "clean, modern, low maintenance"],
+                    ["Taper Fade + Side Part", "classic and sharp for work or events"],
+                    ["Pompadour", "volume on top, works great with your proportions"],
+                    ["Buzz Cut", "your face shape can pull off going short"]
+                ],
+                avoid: "Heavy fringes that cover your forehead and hide your balanced proportions.",
+                beard: "Anything goes: stubble, short boxed, or full beard."
+            },
+            round: {
+                name: "Round",
+                why: "The goal is adding height and angles to make the face look longer and sharper.",
+                shape: { name: "Tall &amp; Angular", tip: "Aim for a taller, squarer outline. Height on top with tight sides makes a round face look longer and sharper.", hair: "M8 34 L8 6 L14 -14 L46 -14 L52 6 L52 34 Z" },
+                cuts: [
+                    ["High Skin Fade + Volume on Top", "tight sides slim the face, height elongates it"],
+                    ["Quiff / Pompadour", "lifts the eye upward"],
+                    ["Faux Hawk", "adds height and edge"],
+                    ["Side Part with Hard Part", "a sharp line adds structure"]
+                ],
+                avoid: "Bowl cuts, blunt fringes, and fuller sides, which make the face look wider.",
+                beard: "A beard longer at the chin and tight on the cheeks adds length and jawline."
+            },
+            square: {
+                name: "Square",
+                why: "You've got a strong jaw, so show it off and keep the top a little textured to soften it.",
+                shape: { name: "Soft &amp; Rounded", tip: "Aim for a softer, rounded outline. Texture on top and a little length on the sides take the edge off strong angles.", hair: "M3 38 Q0 2 30 -2 Q60 2 57 38 Z" },
+                cuts: [
+                    ["Low / Mid Taper Fade", "keeps your jawline the star"],
+                    ["Crew Cut", "masculine and clean"],
+                    ["Textured Crop", "texture on top softens the angles"],
+                    ["Buzz Cut + Lineup", "short and crisp suits a strong frame"]
+                ],
+                avoid: "Very boxy, flat-top shapes that make the head look like a block.",
+                beard: "Light stubble or a short boxed beard to keep that jaw visible."
+            },
+            oblong: {
+                name: "Oblong / Long",
+                why: "Your face is already long, so keep some width on the sides and don't stack height on top.",
+                shape: { name: "Wide &amp; Low", tip: "Go for width, not height. Keep the top lower, the sides fuller, and bring some hair forward to shorten the face.", hair: "M5 46 Q3 4 30 -1 Q57 4 55 46 Z", fringe: "M13 22 L13 16 Q13 4 30 4 Q47 4 47 16 L47 22 L42 18 L37 23 L32 18 L27 23 L22 18 L17 23 Z" },
+                cuts: [
+                    ["Low Taper Fade", "keeps some fullness on the sides"],
+                    ["Textured Fringe / French Crop", "a forward fringe shortens the face"],
+                    ["Medium-Length Side Part", "balanced width without extra height"],
+                    ["Mullet", "length in the back with fuller sides balances the face"]
+                ],
+                avoid: "Tall pompadours, big quiffs, and high skin fades, which make the face look longer.",
+                beard: "A fuller beard on the sides (not the chin) adds width."
+            },
+            heart: {
+                name: "Heart",
+                why: "Wide forehead, narrow chin. Balance the top and add weight toward the bottom.",
+                shape: { name: "Low &amp; Balanced", tip: "Keep the top close and soft, with a fringe to narrow the forehead. Skip big volume up top.", hair: "M5 32 Q4 4 30 3 Q56 4 55 32 Z", fringe: "M8 21 Q8 8 30 8 Q52 8 52 21 L47 17 L42 22 L37 17 L32 22 L27 17 L22 22 L17 17 L12 22 Z" },
+                cuts: [
+                    ["Textured Fringe", "covers some of the forehead width"],
+                    ["Low Taper Fade", "keeps a little bulk on the sides"],
+                    ["Side-Swept Medium Length", "softens a wide forehead"],
+                    ["Messy Crop", "loose texture keeps the top from looking heavy"]
+                ],
+                avoid: "Slicked-back styles and big volume on top, which make the forehead look wider.",
+                beard: "A full beard or chin strap fills out a narrow chin."
+            },
+            diamond: {
+                name: "Diamond",
+                why: "Cheekbones are your widest point. Add fullness at the forehead and chin.",
+                shape: { name: "Full Oval", tip: "Fill in the forehead and temples so your overall outline becomes an oval. Keep some length at the sides.", hair: "M5 40 Q0 2 30 -3 Q60 2 55 40 Z", fringe: "M19 22 Q22 12 30 5 Q38 12 41 22 L37 19 L33 24 L30 19 L27 24 L23 19 Z" },
+                cuts: [
+                    ["Textured Fringe", "adds width at the forehead"],
+                    ["Low / Mid Taper Fade", "avoid going too tight at the temples"],
+                    ["Swept-Back Medium Length", "softens the cheekbone area"],
+                    ["Mullet", "length in the back balances wide cheekbones"]
+                ],
+                avoid: "High skin fades and tight sides, which make the cheekbones stick out more.",
+                beard: "A full beard or goatee adds width to a narrow chin."
+            },
+            triangle: {
+                name: "Triangle",
+                why: "Your jaw is the widest point. Build volume and width up top to balance it out.",
+                shape: { name: "Wide on Top", tip: "Build an upside-down triangle: volume and width up top to match a strong jaw. Don't go tight at the temples.", hair: "M6 36 Q-3 -6 30 -12 Q63 -6 54 36 Z" },
+                cuts: [
+                    ["Textured Quiff", "height and volume on top balance a strong jaw"],
+                    ["Messy Fringe", "adds width across a narrower forehead"],
+                    ["Low Taper Fade", "keeps some fullness at the temples"],
+                    ["Medium-Length Side Part", "fuller top evens out the proportions"]
+                ],
+                avoid: "High skin fades and buzz cuts, which shrink the top and make the jaw look even wider.",
+                beard: "Keep it short and tight along the jaw, or go with light stubble, so the jaw doesn't get bulkier."
+            }
+        };
+
+        const styleResult = document.getElementById("styleResult");
+        const faceBtns = document.querySelectorAll(".face-btn");
+
+        faceBtns.forEach(btn => btn.addEventListener("click", () => {
+            faceBtns.forEach(b => b.setAttribute("aria-pressed", b === btn));
+            const s = FACE_STYLES[btn.dataset.shape];
+            styleResult.innerHTML = `
+                <h3>${s.name} Face</h3>
+                <p>${s.why}</p>
+                <div class="cut-shape">
+                    <svg viewBox="-6 -20 72 104" aria-hidden="true">
+                        <path class="hair" d="${s.shape.hair}"/>
+                        <g class="face">${btn.querySelector("svg").innerHTML}</g>
+                        ${s.shape.fringe ? `<path class="hair" d="${s.shape.fringe}"/>` : ""}
+                    </svg>
+                    <div>
+                        <h4>Best haircut shape: ${s.shape.name}</h4>
+                        <p>${s.shape.tip}</p>
+                    </div>
+                </div>
+                <h4>Recommended cuts</h4>
+                <ul>${s.cuts.map(([cut, note]) => `<li><strong>${cut}</strong>: ${note}</li>`).join("")}</ul>
+                <p><strong>Avoid:</strong> ${s.avoid}</p>
+                <p><strong>Beard tip:</strong> ${s.beard}</p>
+                <p>Still not sure? T3 will help you choose in the chair.</p>
+                <a href="https://app.squareup.com/appointments/book/8zvxgymjgogn2w/LRF1W79CM4Q2P/start" target="_blank" rel="noopener" class="book-link">Book This Look</a>`;
+            styleResult.hidden = false;
+            styleResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }));
+
+        const CHAT_ENDPOINT = "https://zoxukadlhhoqcbzumehz.supabase.co/functions/v1/chat";
+        const chatToggleBtn = document.getElementById("chatToggleBtn");
+        const chatCloseBtn = document.getElementById("chatCloseBtn");
+        const chatPanel = document.getElementById("chatPanel");
+        const chatMessages = document.getElementById("chatMessages");
+        const chatInput = document.getElementById("chatInput");
+        const chatSendBtn = document.getElementById("chatSendBtn");
+
+        let history = [];
+        let opened = false;
+
+        function addMessage(text, role) {
+            const div = document.createElement("div");
+            div.className = "chat-msg " + role;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div;
+        }
+
+        chatToggleBtn.addEventListener("click", () => {
+            chatPanel.classList.add("open");
+            if (!opened) {
+                opened = true;
+                addMessage("Hey! Ask me about services, pricing, promos, or how to book.", "bot");
+            }
+            chatInput.focus();
+        });
+
+        chatCloseBtn.addEventListener("click", () => {
+            chatPanel.classList.remove("open");
+        });
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, "user");
+            chatInput.value = "";
+            chatSendBtn.disabled = true;
+
+            const typingEl = document.createElement("div");
+            typingEl.className = "chat-msg bot typing";
+            typingEl.textContent = "Typing...";
+            chatMessages.appendChild(typingEl);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const res = await fetch(CHAT_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message, history }),
+                });
+                const data = await res.json();
+                typingEl.remove();
+
+                if (data.error) {
+                    addMessage("Sorry, something went wrong. Please call/text us at +1 (647) 741-5316.", "bot");
+                } else {
+                    addMessage(data.reply, "bot");
+                    history.push({ role: "user", content: message });
+                    history.push({ role: "assistant", content: data.reply });
+                }
+            } catch (err) {
+                typingEl.remove();
+                addMessage("Sorry, I couldn't connect. Please call/text us at +1 (647) 741-5316.", "bot");
+                console.error(err);
+            }
+
+            chatSendBtn.disabled = false;
+        }
+
+        chatSendBtn.addEventListener("click", sendMessage);
+        chatInput.addEventListener("keydown", e => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>
