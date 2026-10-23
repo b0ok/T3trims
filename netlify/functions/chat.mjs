@@ -3,7 +3,9 @@
 // Needs NVIDIA_API_KEY set in Netlify: Site configuration -> Environment variables.
 // Moved here from a Supabase Edge Function because free Supabase projects pause.
 
-const NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions";
+import { getStore } from "@netlify/blobs";
+
+const NVIDIA_URL ="https://integrate.api.nvidia.com/v1/chat/completions";
 // Confirmed working on this NVIDIA account as of 2026-09-09. Nemotron models
 // need an extra per-model enable step on build.nvidia.com that hasn't been
 // done yet — swap this back once that's sorted, no other code changes needed.
@@ -88,7 +90,18 @@ export default async (req) => {
     }
 
     const data = await nvidiaRes.json();
-    return json({ reply: data?.choices?.[0]?.message?.content?.trim() || "" });
+    const reply = data?.choices?.[0]?.message?.content?.trim() || "";
+
+    // Save every exchange so T3 can read them at /.netlify/functions/chats.
+    // A failed save must never break the chat for the customer.
+    try {
+      const at = new Date().toISOString();
+      await getStore("chats").setJSON(`${at}-${crypto.randomUUID().slice(0, 8)}`, { at, message, reply });
+    } catch (err) {
+      console.error("Chat save failed:", err);
+    }
+
+    return json({ reply });
   } catch (err) {
     console.error("Chat function error:", err);
     return json({ error: "Something went wrong." }, 500);
